@@ -15,12 +15,12 @@ window.onload = function () {
      */
 
     //1.获取页面导航的元素对象
-    var navPath = document.querySelector(
+    let navPath = document.querySelector(
       '#wrapper #content .contentMain #navPath'
     )
 
     //2.获取数据
-    var path = goodData.path
+    let path = goodData.path
 
     //3.遍历数据
     for (var i = 0; i < path.length; i++) {
@@ -31,12 +31,12 @@ window.onload = function () {
         navPath.appendChild(aNode)
       } else {
         //4.创建a标签
-        var aNode = document.createElement('a')
+        let aNode = document.createElement('a')
         aNode.href = path[i].url
         aNode.innerText = path[i].title
 
         //5.创建i标签
-        var iNode = document.createElement('i')
+        let iNode = document.createElement('i')
         iNode.innerText = '/'
 
         //6.让navPath元素来追加a和i
@@ -57,29 +57,29 @@ window.onload = function () {
      */
 
     //1.获取小图框元素
-    var smallPic = document.querySelector(
+    let smallPic = document.querySelector(
       '#wrapper #content .contentMain #center #left #leftTop #smallPic'
     )
     //获取leftTop元素
-    var leftTop = document.querySelector(
+    let leftTop = document.querySelector(
       '#wrapper #content .contentMain #center #left #leftTop'
     )
 
     //获取数据
-    var imagessrc = goodData.imagessrc
+    let imagessrc = goodData.imagessrc
 
     //2.设置移入事件
     smallPic.onmouseenter = function () {
       //3. 创建蒙版元素
-      var maskDiv = document.createElement('div')
+      let maskDiv = document.createElement('div')
       maskDiv.className = 'mask'
 
       //4.创建大图框元素
-      var BigPic = document.createElement('div')
+      let BigPic = document.createElement('div')
       BigPic.id = 'bigPic'
 
       //5.创建大图片元素
-      var BigImg = document.createElement('img')
+      let BigImg = document.createElement('img')
       BigImg.src = imagessrc[bigimgIndex].b
 
       //6.大图框来追加大图片
@@ -96,11 +96,11 @@ window.onload = function () {
         //event.clientX: 鼠标点距离浏览器左侧X轴的值
         //getBoundingClientRect().left:小图框元素距离浏览器左侧可视left值
         //offsetWidth:为元素的占位宽度
-        var left =
+        const left =
           event.clientX -
           smallPic.getBoundingClientRect().left -
           maskDiv.offsetWidth / 2
-        var top =
+        const top =
           event.clientY -
           smallPic.getBoundingClientRect().top -
           maskDiv.offsetHeight / 2
@@ -125,7 +125,7 @@ window.onload = function () {
         //大图发生移动
         //确定 bigImg 的left top
         //移动比 = 蒙版的位置/大图的位置 = (小图的宽度-蒙版的宽度)/(大图片的宽度-大图框的宽度);
-        var scale =
+        const scale =
           (smallPic.clientWidth - maskDiv.offsetWidth) /
           (BigImg.offsetWidth - BigPic.clientWidth)
 
@@ -156,12 +156,12 @@ window.onload = function () {
      */
 
     //1.获取piclist下的ul
-    var ul = document.querySelector(
+    let ul = document.querySelector(
       '#wrapper #content .contentMain #center #left #leftBottom #piclist ul'
     )
 
     //2.获取imagessrc数据
-    var imagessrc = goodData.imagessrc
+    let imagessrc = goodData.imagessrc
 
     //3.遍历数组
     for (var i = 0; i < imagessrc.length; i++) {
