@@ -679,3 +679,5 @@ window.onload = function () {
     }
   }
 }
+
+//hot-fix
