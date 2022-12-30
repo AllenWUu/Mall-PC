@@ -1,7 +1,7 @@
 //作用：需要将所有的DOM元素对象以及相关的资源全部都加载完毕之后，再来实现的事件函数
 window.onload = function () {
   //声明一个记录点击的缩略图下标
-  var bigimgIndex = 0
+  let bigimgIndex = 0
 
   //路径导航的数据渲染
   navPathDataBind()
